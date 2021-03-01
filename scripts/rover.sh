@@ -12,6 +12,9 @@ source /tf/rover/banner.sh
 
 export ROVER_RUNNER=${ROVER_RUNNER:=false}
 
+set -ETe
+trap 'error ${LINENO}' ERR 1 2 3 6
+
 verify_rover_version
 
 export TF_VAR_workspace=${TF_VAR_workspace:="tfstate"}
@@ -135,9 +138,6 @@ while (( "$#" )); do
         esac
 done
 
-
-set -ETe
-trap 'error ${LINENO}' ERR 1 2 3 6
 
 tf_command=$(echo $PARAMS | sed -e 's/^[ \t]*//')
 
