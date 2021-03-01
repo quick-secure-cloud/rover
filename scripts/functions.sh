@@ -572,7 +572,7 @@ function deploy {
             "destroy")
                 destroy_from_remote_state
                 ;;
-            "plan"|"apply"|"validate"|"import"|"output"|"taint"|"state list")
+            "plan"|"apply"|"validate"|"import"|"output"|"taint"|"state list"|"state rm"|"state show")
                 deploy_from_remote_state
                 ;;
             *)
