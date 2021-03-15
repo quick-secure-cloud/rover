@@ -18,6 +18,7 @@ ARG versionAnsible
 ARG versionPacker
 ARG versionCheckov
 ARG versionMssqlTools
+ARG versionMsodbcsql17
 ARG versionTerraformDocs
 ARG USERNAME=vscode
 ARG USER_UID=1000
@@ -37,6 +38,7 @@ ENV SSH_PASSWD=${SSH_PASSWD} \
     versionPacker=${versionPacker} \
     versionCheckov=${versionCheckov} \
     versionMssqlTools=${versionMssqlTools} \
+    versionMsodbcsql17=${versionMsodbcsql17} \
     versionTerraformDocs=${versionTerraformDocs} \
     PATH="${PATH}:/opt/mssql-tools/bin" \
     TF_DATA_DIR="/home/${USERNAME}/.terraform.cache" \
@@ -153,6 +155,7 @@ RUN apt-get update && \
     ACCEPT_EULA=Y apt-get install -y --no-install-recommends \
         azure-cli=${versionAzureCli}-1~focal \
         mssql-tools=${versionMssqlTools}-1 \
+        msodbcsql17=${versionMsodbcsql17}-1 \
         kubectl=${versionKubectl}-00 \
         packer=${versionPacker} \
         docker-ce-cli \

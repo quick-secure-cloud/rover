@@ -26,6 +26,7 @@ services:
         - versionAnsible
         - versionPacker
         - versionMssqlTools
+        - versionMsodbcsql17
         - versionRover
 
   rover_registry:
