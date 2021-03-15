@@ -29,12 +29,5 @@
         args:
           - versionTfc
           - USERNAME
-    gitlab:
-      image: ${registry}rover-agent:${tag}-${tag_strategy}gitlab
-      build:
-        context: .
-        dockerfile: ./gitlab/Dockerfile
-        args:
-          - USERNAME
 
 
